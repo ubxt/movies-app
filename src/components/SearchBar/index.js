@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import propTypes from 'prop-types';
 //Image
 import searcIcon from '../../images/search-icon.svg';
 //Styles
@@ -10,11 +11,11 @@ const SearchBar = ({ setSearchTerm }) => {
     const initial = useRef(true);
 
     useEffect(() => {
-        if (initial.current){
+        if (initial.current) {
             initial.current = false;
             return;
-        } 
-        const timer = setTimeout(() =>{
+        }
+        const timer = setTimeout(() => {
             setSearchTerm(state);
         }, 500);
 
@@ -25,7 +26,7 @@ const SearchBar = ({ setSearchTerm }) => {
         <Wrapper>
             <Content>
                 <img src={searcIcon} alt='search-icon' />
-                <input type="text" 
+                <input type="text"
                     placeholder='Search Movie'
                     onChange={e => setState(e.currentTarget.value)}
                     value={state}
@@ -33,6 +34,10 @@ const SearchBar = ({ setSearchTerm }) => {
             </Content>
         </Wrapper>
     )
+}
+
+SearchBar.propTypes = {
+    setSearchTerm: propTypes.func
 }
 
 export default SearchBar;
