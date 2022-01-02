@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import PropTypes from "prop-types";
 //Styles
 import { Wrapper, Content } from "../Grid/Grid.styles";
